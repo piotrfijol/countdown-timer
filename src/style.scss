@@ -1,0 +1,49 @@
+.stars-background {
+    z-index: 2;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./assets/bg-stars.svg') no-repeat;
+}
+
+
+.footer {
+    z-index: 7;
+    min-height: 18vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #2f2439;
+    position: relative;
+    align-self: flex-end;
+
+    &__hills {
+        width: 100%;
+        min-height: 19vh;
+        position: absolute;
+        top: -7vh;
+        z-index: 10;
+        background: url('./assets/pattern-hills.svg') no-repeat;
+        background-size: cover;
+        background-position-x: calc(100% + 65px);
+    }
+
+}
+
+@media (min-width: 500px) {
+
+    .footer {
+        &__hills {
+            background-position-x: 100%;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .footer {
+        min-height: 18.5vh;
+    }
+}
