@@ -1,13 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './style.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+      <div className="stars-background"></div>
+      <footer className='footer'>
+        <div className="footer__hills">
+        </div>
+        <div className="footer__icons">
+          <div className="footer__ icon facebook"></div>
+          <div className="footer__ icon pinterest"></div>
+          <div className="footer__ icon instagram"></div>
+        </div>
+      </footer>
     </div>
   )
 }
