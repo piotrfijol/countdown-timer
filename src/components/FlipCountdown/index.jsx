@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import "./flipcountdown.scss";
 
 let formatNumber = (number) => {
+  if(!number || number < 0) return "00";
+
   return number < 10 ? "0" + number : number;
 };
 
@@ -10,18 +12,21 @@ export const FlipCountdown = ({current}) => {
   const currentFormatted = useMemo(() => formatNumber(currentValue), [currentValue]);
   const nextFormatted = useMemo(() => formatNumber(currentValue - 1), [currentValue]);
 
+  const cardRef = useRef(null);
   const container = useRef(null);
 
   
   useEffect(() => {
+    let unsubscribe;
+  
     container.current.classList.add('flip');
-    let unsubscribe = document.querySelector(".number-counter__card")
+    unsubscribe = cardRef.current
       .addEventListener('transitionend', () => {
         setCurrentValue(current);
       });
 
       return () => {
-        removeEventListener('transitionend', unsubscribe);
+        cardRef.current.removeEventListener('transitionend', unsubscribe);
       };
   }, [current]);
 
@@ -39,7 +44,7 @@ export const FlipCountdown = ({current}) => {
       ref={container}
     >
       <div className="number-counter__dots"></div>
-      <div className="number-counter__card">
+      <div className="number-counter__card" ref={cardRef}>
         <p className="number-counter__ back">{nextFormatted}</p>
         <p className="number-counter__ front">{currentFormatted}</p>
       </div>
