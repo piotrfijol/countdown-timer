@@ -26,25 +26,20 @@
 }
 
 .container .description {
-  margin-top: 4.8em;
   color: #FFF;
   font-size: 1.2rem;
+  margin-top: 4.2em;
   text-align: center;
   line-height: 120%;
   letter-spacing: 6px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px) {
+  
+  .container .description {
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: 0.35em;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
