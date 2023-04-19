@@ -1,5 +1,6 @@
 import './App.scss'
-import { Footer } from "./components/footer";
+import { Counter } from "./components/Counter";
+import { Footer } from "./components/Footer";
 
 function App() {
 
@@ -8,8 +9,7 @@ function App() {
       <div className="stars-background"></div>
       <div className="container">
         <h2 className="description">WE'RE LAUNCHING SOON</h2>
-        <div className="counter">
-        </div>
+        <Counter />
       </div>
       <Footer />
     </div>
